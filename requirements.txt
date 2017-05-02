@@ -1,0 +1,8 @@
+numpy
+scipy
+matplotlib
+ipython<6.0
+jupyter
+pandas
+sympy
+nose
