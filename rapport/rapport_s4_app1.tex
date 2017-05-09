@@ -300,26 +300,118 @@ BLABLA c'est une explication de ma courbe...
 \noindent \includegraphics[width=\textwidth]{vert_vit}
 BLABLA c'est une explication de ma courbe...
 
-\section{Statique}
+\section{Statique et Dynamique}
 Pour l'analyse du système dans le domaine du statique, on considère le cas ou le robot porte un objet $O_A$ au point A. Pour simplifier l'analyse, les tiges, représenté par les vecteurs $\overrightarrow{OB}$ et $\overrightarrow{BA}$, sont approximés par des tiges minces et uniformes, les moteurs $M_O$, $M_B$ et $O_A$ sont approximés par des sphères de dimensions négligeables par rapport a OB et BA. On considère aussi que la force FB et le couple CB sont exercés sur l’extrémité B de la tige BA. FB est appliquée par OB alors que CB est appliqué par MB.
 
-\subsection{Équation du DCL}
+\newpage
+\subsection{Statique}
 Dans le domaine statique, on fait l'étude du système a l'équilibre. C'est a dire lorsque: 
 \begin{equation}
 \sum \overrightarrow{F_{ext}} = 0
 \end{equation}
 
 \begin{center} 
-et 
+et quand:
 \end{center}
 
 \begin{equation}
 \sum \overrightarrow{M_B} = 0
 \end{equation}
+\newline
+\noindent \includegraphics[width=\textwidth, scale = 0.01]{DCL_BA}
+\begin{center}
+DCL du bras BA:
+\end{center}
 
+En appliquant les forces dans le Diagramme des Corps Libres, l'équation suivant est obtenu:
 
-\subsubsection{Courbes de Statique et Dynamique}
+\begin{equation}
+\sum \overrightarrow{F_{ext}} = -m_{BA}.\overrightarrow{g} -m_A.\overrightarrow{g} + \overrightarrow{F_B}
+\end{equation}
 
+\begin{equation}
+\sum F_x = -m_{BA}.g_x -m_A.g_x + F_{B_x} = 0
+\end{equation}
+
+\begin{equation}
+\sum F_y = -m_{BA}.g_y -m_A.g_y + F_{B_y} = 0
+\end{equation}
+
+Dans l'équation 41, il n'est pas nécessaire de calculer la valeur de $F_{B_x}$ car celle-ci vaut 0. Cela veut dire qu'il ne reste que $F_{B_y}$ comme force.
+
+\begin{equation}
+\ F_{B_y} = m_A.g + m_{BA}.g
+\end{equation}
+
+Il reste maintenant qu'a trouver la somme des moments de forces $\sum \overrightarrow{M_B}$.
+
+\begin{equation}
+\sum \overrightarrow{M_B} = -lm_Acos(\phi) - \frac{l}{2}m_{BA}gcos(\phi) + C_B = 0
+\end{equation}
+
+ce qui nous donne le couple $C_B$ suivant: 
+
+\begin{equation}
+\ C_B = lm_Acos(\phi)+ \frac{l}{2}m_{BA}gcos(\phi)
+\end{equation}
+
+\subsection{Dynamique}
+
+Dans l'analyse du domaine dynamique du système, il faut faire l'étude du mouvement engendré par le moteur $M_O$. En regardant le Diagramme Cinétique du bras BA, on peut déterminer $F_B$ et $C_B$ en fonction de l'angle $\phi$, de $l$ dans le cas ou BA tourne avec une accélération angulaire constante $\alpha_{BA}$ pendant que OB est immobile.
+
+\begin{equation}
+\sum \overrightarrow{F_{ext}} = m_{BA}.\gamma_{G_{BA}} + m_A.\gamma_{G_A} + \overrightarrow{F_B}
+\end{equation}
+
+\begin{equation}
+    \Bigg[\begin{array}{cc}
+    F_{B_x} \\
+    F_{B_y} \\
+    0
+    \end{array}\Bigg]
+    =
+    m_{BA}\Bigg[\begin{array}{cc}
+    -\omega^2_{BA}\frac{l}{2} \\
+    \alpha_{BA}\frac{l}{2} \\
+    0
+    \end{array}\Bigg]
+    +
+    m_A\Bigg[\begin{array}{cc}
+    -\omega^2_{BA}l \\
+    \alpha_{BA}l \\
+    0
+    \end{array}\Bigg]
+\end{equation}
+
+Ensuite, un projection est fait:
+
+\begin{equation}
+\ F_{B_x} = \frac{-m_{BA}\omega_{BA}l}{2} - m_A\omega_{BA}l 
+\end{equation}
+
+\begin{equation}
+\ F_{B_y} = m_{BA}\alpha_{BA} + m_A\alpha_{BA}l + m_{BA}g + m_Ag
+\end{equation}
+
+\noindent En ce qui concerne la somme des moments d'inertie, 
+
+\begin{equation}
+\sum \overrightarrow{M_A} = I_A\alpha_A + I_{BA}\alpha_{BA}
+\end{equation}
+
+\begin{equation}
+\ I_A\alpha_A + I_{BA}\alpha_{BA} = C_B - M_B - M_A
+\end{equation}
+
+\begin{equation}
+\ C_B = alpha_A + I_{BA}\alpha_{BA} + M_B + M_A
+\end{equation}
+
+\begin{equation}
+\ C_B = (ml^2 + \frac{ml^2}{3})\alpha{BA}+ m_{BA}g\frac{l}{2}cos(\phi) + m_Aglcos(\phi)
+\end{equation}
+
+\subsection{Courbes Obtenue de Statique et de Dynamique}
 Statique:
 \newline
 \noindent \includegraphics[width=\textwidth]{statique}
@@ -330,5 +422,8 @@ BLABLA c'est une explication de ma courbe...
 \newline
 \noindent \includegraphics[width=\textwidth]{dynamique}
 BLABLA c'est une explication de ma courbe...
+
+Donc, pour bien représenter le système du bras BA, le schéma suivant démontre l'ensembles des forces appliqués dans le système.
+
 
 \end{document}
