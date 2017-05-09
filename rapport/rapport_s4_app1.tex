@@ -37,9 +37,11 @@
 
 \newpage
 \section{Introduction}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultricies et eros nec viverra. Curabitur in urna posuere, posuere est sit amet, accumsan tellus. Pellentesque ultricies rutrum purus, vitae sagittis nibh dictum sed. Curabitur sodales, odio a vulputate laoreet, nisl velit egestas odio, vel posuere metus nisl eu ipsum. Sed nec metus magna. Donec at nulla leo. Fusce cursus tristique sem ac euismod. Sed vitae accumsan diam. Vestibulum justo odio, lobortis lacinia elit sed, euismod imperdiet lorem. Donec congue nibh quis ullamcorper porttitor. Duis vitae diam volutpat velit sollicitudin blandit iaculis eu magna. Nulla aliquet est leo, eget sollicitudin purus euismod eget. Fusce vel nibh commodo, pellentesque turpis sed, interdum purus. Vestibulum vehicula justo urna, eget facilisis justo aliquet ut. 
+Dans le cadre de l’implémentation d’un système de commande du bras mécanique de l’entreprise CRM, il faut analyser le mouvement d’un point A sur le plan 2D de celui-ci. Le point A, situé à l’extrémité des bras du robot, bouge selon le bras BA attaché au moteur MB et le bras BA bouge selon le bras OB avec le moteur MO. Notre mandat est de déterminer les forces et les couples nécessaires pour maintenir le robot en équilibre ou de le bougé selon des directives spécifiques. Pour la résolution de la problématique, l’équipe a divisé l’ensemble en plusieurs étapes. La première étape fût de regarder la cinématique du système de manière générale, ensuite dans des cas avec des restrictions sur les mouvements possibles du point A dans le plan 2D. En deuxième partie, l’analyse est centrée sur la statique et la dynamique du système.
 
 \section{Cinématique}
+Dans l'analyse de la cinématique, il y avait trois cas à analyser. Il faut déterminer la relation du mouvement du Point A en reliant les mouvements angulaires des bras OB et BA au mouvement linéaire du point A dans tous les cas. Précisément, il faut déterminer les vecteurs de positions, de vitesses et d’accélération linéaire du point A en fonction des longueurs des bras, soit L1 et L2, des angles $\phi$ et $\theta$ et de leur vitesse et accélération angulaires respectives.
+Les calcules présenté dans la section suivant explique les démarches mathématiques utilisé pour la résolution des cas.
 \subsection{équations générales}
 
 équation générale: vecteur position
@@ -183,6 +185,21 @@ l_1 = l_2
 
 \begin{equation}
 \overrightarrow{\gamma_{Ax}} = -2l_1cos(\theta)(\omega_{OB})^2-2l_1sin(\theta)\alpha_{OB}
+\end{equation}
+
+\section{Statique}
+Pour l'analyse du système dans le domaine du statique, on considère le cas ou le robot porte un objet $O_A$ au point A. Pour simplifier l'analyse, les tiges, représenté par les vecteurs $\overrightarrow{OB}$ et $\overrightarrow{BA}$, sont approximés par des tiges minces et uniformes, les moteurs $M_O$, $M_B$ et $O_A$ sont approximés par des sphères de dimensions négligeables par rapport a OB et BA. On considère aussi que la force FB et le couple CB sont exercés sur l’extrémité B de la tige BA. FB est appliquée par OB alors que CB est appliqué par MB.
+\subsection{Équation du DCL}
+dans le domaine statique, on
+\begin{equation}
+\sum \overrightarrow{F_{ext}} = 0
+\end{equation}
+\begin{center} 
+et 
+\end{center}
+
+\begin{equation}
+\sum \overrightarrow{M_B} = 0
 \end{equation}
 
 \end{document}
