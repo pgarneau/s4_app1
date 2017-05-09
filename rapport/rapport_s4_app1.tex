@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{geometry}
+\graphicspath{ {images/} 
+\geometry{legalpaper, lmargin=0.7in, bmargin=1in}}
+
+\begin{document}
+
+%%%%%%%%%%%%%%
+%page  titre en caractères plus large
+%%%%%%%%%%%%%%
+\begin{titlepage}   
+	\large{
+		\begin{center}
+			UNIVERSITÉ DE SHERBROOKE\\Faculté de génie\\
+			Département de génie électrique et génie informatique\\
+			\vspace{3cm}
+			{\LARGE\textbf{éléments de statique et dynamique}}\\
+			\vspace{2cm}
+			\LARGE{Rapport APP1}\\
+			\vspace{2cm}
+			Présenté à\\l'équipe professorale de la session S4\\
+			\vspace{2cm}
+			Produit par\\Axel Bosco, Philippe Garneau, Philippe Spino\\
+			\vspace{1cm}
+			\vfill{7 mai 2017 - Sherbrooke}
+		\end{center}
+	}
+\end{titlepage}
+\newpage
+%%%%%%%%%%%%%%
+%Table des matières
+%%%%%%%%%%%%%%
+\tableofcontents
+
+\newpage
+\section{Introduction}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultricies et eros nec viverra. Curabitur in urna posuere, posuere est sit amet, accumsan tellus. Pellentesque ultricies rutrum purus, vitae sagittis nibh dictum sed. Curabitur sodales, odio a vulputate laoreet, nisl velit egestas odio, vel posuere metus nisl eu ipsum. Sed nec metus magna. Donec at nulla leo. Fusce cursus tristique sem ac euismod. Sed vitae accumsan diam. Vestibulum justo odio, lobortis lacinia elit sed, euismod imperdiet lorem. Donec congue nibh quis ullamcorper porttitor. Duis vitae diam volutpat velit sollicitudin blandit iaculis eu magna. Nulla aliquet est leo, eget sollicitudin purus euismod eget. Fusce vel nibh commodo, pellentesque turpis sed, interdum purus. Vestibulum vehicula justo urna, eget facilisis justo aliquet ut. 
+
+\section{Cinématique}
+\subsection{équations générales}
+équation générale: vecteur position
+
+\begin{equation}
+\overrightarrow{OA} = 
+    l_1\Bigg[\begin{array}{cc}
+    cos(\theta) \\
+    sin(\theta) \\
+    0
+    \end{array}\Bigg]
+    +
+    l_2\Bigg[\begin{array}{cc}
+    cos(\phi) \\
+    sin(\phi) \\
+    0
+    \end{array}\Bigg]
+\end{equation}
+équation générale: vecteur vitesse
+
+\begin{equation}
+\overrightarrow{V_{OA}} = 
+    l_1\Bigg[\begin{array}{cc}
+    -\theta'sin(\theta) \\
+    \theta'cos(\theta) \\
+    0
+    \end{array}\Bigg]
+    +
+    l_2\Bigg[\begin{array}{cc}
+    -\phi'sin(\phi) \\
+    \phi'cos(\phi) \\
+    0
+    \end{array}\Bigg]
+\end{equation}
+
+\end{document}
