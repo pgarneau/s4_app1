@@ -37,7 +37,7 @@
 
 \newpage
 \section{Introduction}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultricies et eros nec viverra. Curabitur in urna posuere, posuere est sit amet, accumsan tellus. Pellentesque ultricies rutrum purus, vitae sagittis nibh dictum sed. Curabitur sodales, odio a vulputate laoreet, nisl velit egestas odio, vel posuere metus nisl eu ipsum. Sed nec metus magna. Donec at nulla leo. Fusce cursus tristique sem ac euismod. Sed vitae accumsan diam. Vestibulum justo odio, lobortis lacinia elit sed, euismod imperdiet lorem. Donec congue nibh quis ullamcorper porttitor. Duis vitae diam volutpat velit sollicitudin blandit iaculis eu magna. Nulla aliquet est leo, eget sollicitudin purus euismod eget. Fusce vel nibh commodo, pellentesque turpis sed, interdum purus. Vestibulum vehicula justo urna, eget facilisis justo aliquet ut. 
+Dans le cadre de l’implémentation d’un système de commande du bras mécanique de l’entreprise CRM, il faut analyser le mouvement d’un point A sur le plan 2D de celui-ci. Le point A, situé à l’extrémité des bras du robot, bouge selon le bras BA attaché au moteur MB et le bras BA bouge selon le bras OB avec le moteur MO. Notre mandat est de déterminer les forces et les couples nécessaires pour maintenir le robot en équilibre ou de le bougé selon des directives spécifiques. Pour la résolution de la problématique, l’équipe a divisé l’ensemble en plusieurs étapes. La première étape fût de regarder la cinématique du système de manière générale, ensuite dans des cas avec des restrictions sur les mouvements possibles du point A dans le plan 2D. En deuxième partie, l’analyse est centrée sur la statique et la dynamique du système. 
 
 \section{Cinématique}
 \subsection{équations générales}
@@ -184,5 +184,88 @@ l_1 = l_2
 \begin{equation}
 \overrightarrow{\gamma_{Ax}} = -2l_1cos(\theta)(\omega_{OB})^2-2l_1sin(\theta)\alpha_{OB}
 \end{equation}
+
+\subsection{Movement vertical}
+\subsubsection{Relation entre $\theta$ et $\phi$ lorsque $\phi$ est negatif}
+
+Trouver $cos(\phi)$:
+
+\begin{equation}
+l_1 = l_2
+\end{equation}
+
+\begin{equation}
+\overrightarrow{X_A} = l_1cos(\theta)+l_1cos(\phi)
+\end{equation}
+
+\begin{equation}
+l_1 = l_1cos(\theta)+l_1cos(\phi)
+\end{equation}
+
+\begin{equation}
+cos(\phi) = 1-cos(\theta)
+\end{equation}
+
+\noindent Trouver $sin(\phi)$ a partir de $cos(\phi)$:
+
+\begin{equation}
+cos^2(\phi)+sin^2(\phi) = 1
+\end{equation}
+
+\begin{equation}
+sin^2(\phi) = 1-cos^2(\phi)
+\end{equation}
+
+\begin{equation}
+sin^2(\phi) = -cos^2(\theta)+2cos(\theta)
+\end{equation}
+
+\begin{equation}
+\pm sin(\phi) = \sqrt{-cos^2(\theta)+2cos(\theta)}
+\end{equation}
+
+\noindent Nous considerons que $\phi$ est negatif, donc:
+
+\begin{equation}
+sin(\phi) = -\sqrt{-cos^2(\theta)+2cos(\theta)}
+\end{equation}
+
+\subsubsection{2 equations cinematiques}
+
+Position:
+
+\begin{equation}
+l_1 = l_2
+\end{equation}
+
+\begin{equation}
+\overrightarrow{Y_A} = l_1sin(\theta)-l_1\sqrt{-cos^2(\theta)+2cos(\theta)}
+\end{equation}
+
+\noindent Vitesse:
+
+\begin{equation}
+\overrightarrow{V_{Ay}} = \frac{d(l_1sin(\theta)-l_1\sqrt{-cos^2(\theta)+2cos(\theta)})}{dt}
+\end{equation}
+
+\begin{equation}
+\overrightarrow{V_{Ay}} = l_1cos(\theta)\theta'-\\
+\frac{l_1(-cos^2(\theta)+2cos(\theta))'}{2\sqrt{-cos^2(\theta)+2cos(\theta)}}
+\end{equation}
+
+\begin{equation}
+\overrightarrow{V_{Ay}} = l_1cos(\theta)\theta'-\\
+\frac{l_1sin(\theta)(cos(\theta)-1)\theta'}{\sqrt{-cos^2(\theta)+2cos(\theta)}}
+\end{equation}
+
+\begin{equation}
+\theta' = \omega_{OB}
+\end{equation}
+
+\begin{equation}
+\overrightarrow{V_{Ay}} = l_1cos(\theta)\omega_{OB}-\\
+\frac{l_1sin(\theta)(cos(\theta)-1)\omega_{OB}}{\sqrt{-cos^2(\theta)+2cos(\theta)}}
+\end{equation}
+
 
 \end{document}

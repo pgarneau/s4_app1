@@ -4,3 +4,6 @@
 \contentsline {subsection}{\numberline {2.2}Mouvement horizontal}{2}
 \contentsline {subsubsection}{\numberline {2.2.1}Relation entre $\theta $ et $\phi $ lorsque $\phi $ est negatif}{2}
 \contentsline {subsubsection}{\numberline {2.2.2}3 equations cinematiques}{3}
+\contentsline {subsection}{\numberline {2.3}Movement vertical}{4}
+\contentsline {subsubsection}{\numberline {2.3.1}Relation entre $\theta $ et $\phi $ lorsque $\phi $ est negatif}{4}
+\contentsline {subsubsection}{\numberline {2.3.2}2 equations cinematiques}{4}
