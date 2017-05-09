@@ -41,8 +41,8 @@ Dans le cadre de l’implémentation d’un système de commande du bras mécani
 \section{Cinématique}
 Dans l'analyse de la cinématique, il y avait trois cas à analyser. Il faut déterminer la relation du mouvement du Point A en reliant les mouvements angulaires des bras OB et BA au mouvement linéaire du point A dans tous les cas. Précisément, il faut déterminer les vecteurs de positions, de vitesses et d’accélération linéaire du point A en fonction des longueurs des bras, soit L1 et L2, des angles $\phi$ et $\theta$ et de leur vitesse et accélération angulaires respectives.
 Les calcules présenté dans la section suivant explique les démarches mathématiques utilisé pour la résolution des cas.
-\subsection{équations générales}
 
+\subsection{équations générales}
 équation générale: vecteur position
 
 \begin{equation}
@@ -96,7 +96,6 @@ Les calcules présenté dans la section suivant explique les démarches mathéma
 
 \subsection{Mouvement horizontal}
 \subsubsection{Relation entre $\theta$ et $\phi$ lorsque $\phi$ est negatif}
-
 Trouver $sin(\phi)$:
 
 \begin{equation}
@@ -115,7 +114,6 @@ l_1 = l_2
 sin(\phi) = -sin(\theta)
 \end{equation}
 
-\newpage
 \noindent Trouver $cos(\phi)$ a partir de $sin(\phi)$:
 
 \begin{equation}
@@ -127,7 +125,6 @@ cos(\phi) = \sqrt{1-sin^2(\theta)}
 \end{equation}
 
 \subsubsection{3 equations cinematiques}
-
 Position:
 
 \begin{equation}
@@ -187,7 +184,6 @@ l_1 = l_2
 \end{equation}
 
 \subsubsection{Courbes du mouvement horizontal}
-
 Position:
 \newline
 \noindent \includegraphics[width=\textwidth]{hori_pos}
@@ -205,9 +201,8 @@ BLABLA c'est une explication de ma courbe...
 \noindent \includegraphics[width=\textwidth]{hori_accel}
 BLABLA c'est une explication de ma courbe...
 
-\subsection{Movement vertical}
+\subsection{Mouvement vertical}
 \subsubsection{Relation entre $\theta$ et $\phi$ lorsque $\phi$ est negatif}
-
 Trouver $cos(\phi)$:
 
 \begin{equation}
@@ -251,7 +246,6 @@ sin(\phi) = -\sqrt{-cos^2(\theta)+2cos(\theta)}
 \end{equation}
 
 \subsubsection{2 equations cinematiques}
-
 Position:
 
 \begin{equation}
@@ -288,7 +282,6 @@ l_1 = l_2
 \end{equation}
 
 \subsubsection{Courbes du mouvement vertical}
-
 Position:
 \newline
 \noindent \includegraphics[width=\textwidth]{vert_pos}
@@ -299,6 +292,9 @@ BLABLA c'est une explication de ma courbe...
 \newline
 \noindent \includegraphics[width=\textwidth]{vert_vit}
 BLABLA c'est une explication de ma courbe...
+
+\subsection{Relation entre $\theta$ et $\phi$ et les commandes de $M_O$ et $M_B$}
+Lorsque le moteur $M_B$ s'active, il affecte seulement la valeur de $\phi$. Par contre, lorsque le moteur $M_O$ s'active, il vient bien evidemment modifier la valeur de $\theta$, mais aussi la valeur de $\phi$, car les tiges OB et BA peuvent etre consideree comme une seule tige OA lorsque seulement le moteur $M_O$ est en marche.
 
 \section{Statique}
 Pour l'analyse du système dans le domaine du statique, on considère le cas ou le robot porte un objet $O_A$ au point A. Pour simplifier l'analyse, les tiges, représenté par les vecteurs $\overrightarrow{OB}$ et $\overrightarrow{BA}$, sont approximés par des tiges minces et uniformes, les moteurs $M_O$, $M_B$ et $O_A$ sont approximés par des sphères de dimensions négligeables par rapport a OB et BA. On considère aussi que la force FB et le couple CB sont exercés sur l’extrémité B de la tige BA. FB est appliquée par OB alors que CB est appliqué par MB.
@@ -319,16 +315,15 @@ et
 
 
 \subsubsection{Courbes de Statique et Dynamique}
-
 Statique:
 \newline
 \noindent \includegraphics[width=\textwidth]{statique}
-BLABLA c'est une explication de ma courbe...
-\newline
 \newline
 \noindent Dynamique:
 \newline
 \noindent \includegraphics[width=\textwidth]{dynamique}
-BLABLA c'est une explication de ma courbe...
+
+\subsubsection{Analyse des courbes de Statique et Dynamique}
+Très rapidement, il peut être observé que les deux courbes ont une forme extrêmement similaire. On dirait que les valeurs retrouvées dans la courbe en statique ont été translatées vers le haut sur l'ordonnée. Ceci peut être expliqué par le simple fait qu'en dynamique, il faut une force pour contrer les effets de la gravite (statique) ainsi qu'une force additionelle pour simplement bouger notre bras (dynamique). La force requise pour bouger le bras reste pareille à tout moment et ne fait que s'additioner à la force variable requise pour tenir le bras en équilibre. C'est pour ça que la courbe représentant la dynamique semble avoir seulement reçu une translation positive sur l'ordonnée.
 
 \end{document}
