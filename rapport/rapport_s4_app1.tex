@@ -41,6 +41,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultricies et er
 
 \section{Cinématique}
 \subsection{équations générales}
+
 équation générale: vecteur position
 
 \begin{equation}
@@ -57,21 +58,131 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultricies et er
     0
     \end{array}\Bigg]
 \end{equation}
-équation générale: vecteur vitesse
+
+\noindent équation générale: vecteur vitesse
 
 \begin{equation}
 \overrightarrow{V_{OA}} = 
     l_1\Bigg[\begin{array}{cc}
-    -\theta'sin(\theta) \\
-    \theta'cos(\theta) \\
+    -sin(\theta)\theta' \\
+    cos(\theta)\theta' \\
     0
     \end{array}\Bigg]
     +
     l_2\Bigg[\begin{array}{cc}
-    -\phi'sin(\phi) \\
-    \phi'cos(\phi) \\
+    -sin(\phi)\phi' \\
+    cos(\phi)\phi' \\
     0
     \end{array}\Bigg]
+\end{equation}
+
+\noindent equation generale: vecteur acceleration
+
+\begin{equation}
+\overrightarrow{\alpha_{OA}} =
+	l_1\Bigg[\begin{array}{cc}
+	-cos(\theta)(\theta')^2-sin(\theta)\theta'' \\
+	-sin(\theta)(\theta')^2+cos(\theta)\theta'' \\
+	0
+	\end{array}\Bigg]
+	+
+	l_2\Bigg[\begin{array}{cc}
+	-cos(\phi)(\phi')^2-sin(\phi)\phi'' \\
+	-sin(\phi)(\phi')^2+cos(\phi)\phi'' \\
+	0
+	\end{array}\Bigg]
+\end{equation}
+
+\subsection{Mouvement horizontal}
+\subsubsection{Relation entre $\theta$ et $\phi$ lorsque $\phi$ est negatif}
+
+Trouver $sin(\phi)$:
+
+\begin{equation}
+l_1 = l_2
+\end{equation}
+
+\begin{equation}
+\overrightarrow{Y_A} = l_1sin(\theta)+l_1sin(\phi)
+\end{equation}
+
+\begin{equation}
+0 = l_1sin(\theta)+l_1sin(\phi)
+\end{equation}
+
+\begin{equation}
+sin(\phi) = -sin(\theta)
+\end{equation}
+
+\newpage
+\noindent Trouver $cos(\phi)$ a partir de $sin(\phi)$:
+
+\begin{equation}
+cos^2(\phi)+sin^2(\phi) = 1
+\end{equation}
+
+\begin{equation}
+cos(\phi) = \sqrt{1-sin^2(\theta)}
+\end{equation}
+
+\subsubsection{3 equations cinematiques}
+
+Position:
+
+\begin{equation}
+l_1 = l_2
+\end{equation}
+
+\begin{equation}
+\overrightarrow{X_A} = l_1cos(\theta)+l_1\sqrt{1-sin^2(\theta)}
+\end{equation}
+
+\begin{equation}
+\overrightarrow{X_A} = l_1cos(\theta)+l_1\sqrt{cos^2(\theta)}
+\end{equation}
+
+\begin{equation}
+\overrightarrow{X_A} = 2l_1cos(\theta)
+\end{equation}
+
+\noindent Vitesse:
+
+\begin{equation}
+\overrightarrow{V_{Ax}} = \frac{d(2l_1cos(\theta))}{dt}
+\end{equation}
+
+\begin{equation}
+\overrightarrow{V_{Ax}} = -2l_1sin(\theta)\theta'
+\end{equation}
+
+\begin{equation}
+\theta' = \omega_{OB}
+\end{equation}
+
+\begin{equation}
+\overrightarrow{V_{Ax}} = -2l_1sin(\theta)\omega_{OB}
+\end{equation}
+
+\noindent Acceleration:
+
+\begin{equation}
+\overrightarrow{\gamma_{Ax}} = \frac{d(-2l_1sin(\theta)\theta')}{dt}
+\end{equation}
+
+\begin{equation}
+\overrightarrow{\gamma_{Ax}} = -2l_1cos(\theta)(\theta')^2-2l_1sin(\theta)\theta''
+\end{equation}
+
+\begin{equation}
+\theta' = \omega_{OB}
+\end{equation}
+
+\begin{equation}
+\theta'' = \alpha_{OB}
+\end{equation}
+
+\begin{equation}
+\overrightarrow{\gamma_{Ax}} = -2l_1cos(\theta)(\omega_{OB})^2-2l_1sin(\theta)\alpha_{OB}
 \end{equation}
 
 \end{document}
