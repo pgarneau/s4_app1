@@ -42,7 +42,7 @@ Dans le cadre de l’implémentation d’un système de commande du bras mécani
 Dans l'analyse de la cinématique, il y avait trois cas à analyser. Il faut déterminer la relation du mouvement du Point A en reliant les mouvements angulaires des bras OB et BA au mouvement linéaire du point A dans tous les cas. Précisément, il faut déterminer les vecteurs de positions, de vitesses et d’accélération linéaire du point A en fonction des longueurs des bras, soit L1 et L2, des angles $\phi$ et $\theta$ et de leur vitesse et accélération angulaires respectives.
 Les calcules présenté dans la section suivant explique les démarches mathématiques utilisé pour la résolution des cas.
 
-\subsection{équations générales}
+\subsection{Équations générales}
 équation générale: vecteur position
 
 \begin{equation}
@@ -124,7 +124,7 @@ cos^2(\phi)+sin^2(\phi) = 1
 cos(\phi) = \sqrt{1-sin^2(\theta)}
 \end{equation}
 
-\subsubsection{3 equations cinematiques}
+\subsubsection{Équations cinématiques}
 Position:
 
 \begin{equation}
@@ -256,7 +256,7 @@ sin^2(\phi) = -cos^2(\theta)+2cos(\theta)
 sin(\phi) = -\sqrt{-cos^2(\theta)+2cos(\theta)}
 \end{equation}
 
-\subsubsection{2 equations cinematiques}
+\subsubsection{Équations cinématiques}
 Position:
 
 \begin{equation}
@@ -445,5 +445,7 @@ Statique:
 \subsubsection{Analyse des courbes de Statique et Dynamique}
 À première vue, on remarque que la courbe dynamique est plus élevée que la courbe statique. Cette observation est attendue, car afin de faire bouger un objet, il faut qu'il soit en équilibre (statique) et qu'on ajoute une force additionnelle. Il peut aussi être observé que la courbe dynamique semble représenter une simple translation positive sur l'axe des y de la courbe statique. Ce phénomène pourrait être expliqué par le fait qu'en statique, la somme des forces est égale à 0, mais qu'en dynamique, la somme des forces est non nulle. Cette différence entre la somme des forces en statique et dynamique semble représenter la valeur numérique de la translation de la courbe statique vers le courbe dynamique.
 
+\section{Conclusion}
+Pour conclure, l'analyse de la problématique a permis de trouver les équations cinématiques des différents cas possibles, tels que les cas généraux, le mouvement horizontal et le mouvement vertical. De plus, à l'aide de ces équations, les courbes représentant les cas horizontal et vertical ont permis de tracer les configurations initiales et finales du robot. L'analyse de la dynamique a permis de trouver les équations lorsque le robot est immobile et en mouvement. De ces équations, la force et le moment de force au point B ont été trouvés pour la statique et la dynamique du robot. Les équations des moments de force ont été projetées sur des courbes afin de pouvoir les analyser.
 
 \end{document}
