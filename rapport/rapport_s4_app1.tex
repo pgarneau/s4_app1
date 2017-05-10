@@ -187,19 +187,30 @@ l_1 = l_2
 Position:
 \newline
 \noindent \includegraphics[width=\textwidth]{hori_pos}
-BLABLA c'est une explication de ma courbe...
+Avec les contraintes, la position de $A_y$ doit être fixée à la hauteur du point O en tout temps. Ce qui oblige un mouvement horizontal seulement. Selon le graphique, la position initiale en $A_x$ est à distance de $L1 + L2$. Plus $\theta$ est grand, plus le déplacement horizontal est rapide. La position finale atteinte à $\pi/3$ est à distance de L1 du point O.
 \newline
 \newline
 \noindent Vitesse:
 \newline
 \noindent \includegraphics[width=\textwidth]{hori_vit}
-BLABLA c'est une explication de ma courbe...
+Initialement au repos, la vitesse varie et accélère en fonction de $\theta$. Cependant, l'accélération est de moins en moins grande au fil du temps. Puisque le déplacement est négatif, la vitesse est négative au fil du déplacement. À la configuration finale du robot, la vitesse de son déplacement horizontal est environ $-11 m/s$.
 \newline
 \newline
 \noindent Acceleration:
 \newline
 \noindent \includegraphics[width=\textwidth]{hori_accel}
-BLABLA c'est une explication de ma courbe...
+À l'instant où le robot a commencé son déplacement horizontal, l'accélération est à son maximum. À mesure que $\theta$ grandit, l'accélération diminue. Puisque les angles sont de plus en plus grand, la distance séparant le point O au point A est de moins en moins grande. L'angle doit être plus grand pour effectuer plus de déplacement.
+
+\subsubsection{Configuration initiale et finale}
+Initiale:
+\newline
+\centerline{\noindent \includegraphics[scale=0.75]{IH}}
+\newline
+\newline
+\noindent Finale:
+\newline
+\centerline{\noindent \includegraphics[scale=0.75]{FH}}
+\newline
 
 \subsection{Mouvement vertical}
 \subsubsection{Relation entre $\theta$ et $\phi$ lorsque $\phi$ est negatif}
@@ -285,13 +296,24 @@ l_1 = l_2
 Position:
 \newline
 \noindent \includegraphics[width=\textwidth]{vert_pos}
-BLABLA c'est une explication de ma courbe...
+Selon les contraintes, la configuration initiale exige que $A_x$ est toujours à distance de L1 du point O. Puisque la relation entre $\theta$ et $\phi$ est lorsque $\phi$ est négatif, la position $A_y$ est à L2 de distance du point O pour la mouvement vertical. Le déplacement est linéaire et permet de trouver la configuration finale du robot à $\theta/3$, en respectant la contrainte que $A_x$ est toujours à la même distance de L1.
 \newline
 \newline
 \noindent Vitesse:
 \newline
 \noindent \includegraphics[width=\textwidth]{vert_vit}
-BLABLA c'est une explication de ma courbe...
+Puisqu'il existe la contrainte sur $A_x$, la vitesse varie dépendamment des angles $\theta$ et $\phi$ et doit . À environ $\theta = 0,7$, la courbe de vitesse change et accélère, alors que précédemment, elle décélérait.
+
+\subsubsection{Configuration initiale et finale}
+Initiale:
+\newline
+\centerline{\noindent \includegraphics[scale=0.75]{IV}}
+\newline
+\newline
+\noindent Finale:
+\newline
+\centerline{\noindent \includegraphics[scale=0.75]{FV}}
+\newline
 
 \subsection{Relation entre $\theta$ et $\phi$ et les commandes de $M_O$ et $M_B$}
 Lorsque le moteur $M_B$ s'active, il affecte seulement la valeur de $\phi$. Par contre, lorsque le moteur $M_O$ s'active, il vient bien evidemment modifier la valeur de $\theta$, mais aussi la valeur de $\phi$, car les tiges OB et BA peuvent etre consideree comme une seule tige OA lorsque seulement le moteur $M_O$ est en marche.
