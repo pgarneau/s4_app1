@@ -42,7 +42,7 @@ Dans le cadre de l’implémentation d’un système de commande du bras mécani
 Dans l'analyse de la cinématique, il y avait trois cas à analyser. Il faut déterminer la relation du mouvement du Point A en reliant les mouvements angulaires des bras OB et BA au mouvement linéaire du point A dans tous les cas. Précisément, il faut déterminer les vecteurs de positions, de vitesses et d’accélération linéaire du point A en fonction des longueurs des bras, soit L1 et L2, des angles $\phi$ et $\theta$ et de leur vitesse et accélération angulaires respectives.
 Les calcules présenté dans la section suivant explique les démarches mathématiques utilisé pour la résolution des cas.
 
-\subsection{Équations générales}
+\subsection{équations générales}
 équation générale: vecteur position
 
 \begin{equation}
@@ -124,7 +124,7 @@ cos^2(\phi)+sin^2(\phi) = 1
 cos(\phi) = \sqrt{1-sin^2(\theta)}
 \end{equation}
 
-\subsubsection{Équations cinématiques}
+\subsubsection{3 equations cinematiques}
 Position:
 
 \begin{equation}
@@ -199,9 +199,9 @@ Initialement au repos, la vitesse varie et accélère en fonction de $\theta$. C
 \noindent Acceleration:
 \newline
 \noindent \includegraphics[width=\textwidth]{hori_accel}
-À l'instant où le robot a commencé son déplacement horizontal, l'accélération est à son maximum. À mesure que $\theta$ grandit, l'accélération diminue. Puisque les angles sont de plus en plus grand, la distance séparant le point O au point A est de moins en moins grande. L'angle doit être plus grand pour effectuer plus de déplacement.
+À l'instant où le robot a commencé son déplacement horizontal, l'accélération est à son maximum. À mesure que $\theta$ grandit, l'accélération diminue. Puisque les angles sont de plus en plus grand, la distance séparant le point O au point A est de moins en moins grande. Pour la même distance de déplacement entre deux points face à deux autres, la variation de $\theta$ doit être plus grande.
 
-\subsubsection{Configuration initiale et finale}
+\subsubsection{Configuration initiale et finale horizontale}
 Initiale:
 \newline
 \centerline{\noindent \includegraphics[scale=0.75]{IH}}
@@ -256,7 +256,7 @@ sin^2(\phi) = -cos^2(\theta)+2cos(\theta)
 sin(\phi) = -\sqrt{-cos^2(\theta)+2cos(\theta)}
 \end{equation}
 
-\subsubsection{Équations cinématiques}
+\subsubsection{2 equations cinematiques}
 Position:
 
 \begin{equation}
@@ -302,9 +302,9 @@ Selon les contraintes, la configuration initiale exige que $A_x$ est toujours à
 \noindent Vitesse:
 \newline
 \noindent \includegraphics[width=\textwidth]{vert_vit}
-Puisqu'il existe la contrainte sur $A_x$, la vitesse varie dépendamment des angles $\theta$ et $\phi$ et doit . À environ $\theta = 0,7$, la courbe de vitesse change et accélère, alors que précédemment, elle décélérait.
+Puisqu'il existe la contrainte sur $A_x$, la vitesse varie dépendamment des angles $\theta$ et $\phi$ et doit . À environ $\theta = 0,7$, la courbe de vitesse change et accélère, alors que précédemment, elle décélérait. Jusqu'à $\theta = 0,7$, la valeur de $\phi$ est inférieur à $-\pi/2$. Rendu à $\theta = 0,7$, $\phi$ devient supérieur à $-\pi/2$ et la vitesse accélère, car les deux angles offrent un meilleur glissement au robot.
 
-\subsubsection{Configuration initiale et finale}
+\subsubsection{Configuration initiale et finale verticale}
 Initiale:
 \newline
 \centerline{\noindent \includegraphics[scale=0.75]{IV}}
